@@ -16,13 +16,8 @@ body {
   background-color: black;
 }
 img {
-<<<<<<< HEAD
   width: 300px;
   height: 300px;
-=======
-  width: 10vw;
-  height: 10vw;
->>>>>>> e29a0d5335f5c09b23969f434bf3621a98e37b11
   border-radius: 7px;
 }
 #img {
@@ -38,11 +33,7 @@ img {
   display: flex;
   /* align-items: center; */
   /* justify-content: space-around; */
-<<<<<<< HEAD
   row-gap: 30px;
-=======
-  row-gap: 2vw;
->>>>>>> e29a0d5335f5c09b23969f434bf3621a98e37b11
   flex-direction: column;
   border-radius: 7px;
   /* height: 60%; */
