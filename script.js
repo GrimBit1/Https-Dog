@@ -6,7 +6,7 @@ let message = document.getElementById("message");
 
 const fetchDog = async () => {
 
-    let dogData = await fetch("/httpDog.json").then((value) => value.json());
+    let dogData = await fetch("/Https-Dog/httpDog.json").then((value) => value.json());
 
     let randomNum = parseInt(Math.random() * 72);
 
