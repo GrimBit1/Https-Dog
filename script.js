@@ -5,7 +5,7 @@ const status = document.querySelector("#status");
 const message = document.querySelector("#message");
 
 const fetchDog = async () => {
-  const res = await fetch("/httpDog.json");
+  const res = await fetch("/Https-Dog/httpDog.json");
   const dogData = await res.json();
 
   const randomNum = parseInt(Math.random() * dogData.HttpArray.length);
