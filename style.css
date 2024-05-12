@@ -18,6 +18,7 @@ body {
 img {
   width: 300px;
   height: 300px;
+  object-fit: cover;
   border-radius: 7px;
   transition: all ease-in-out;
 }
@@ -27,17 +28,12 @@ img {
   align-self: center;
 }
 .card {
-  /* width: 110px; */
-  /* width: (fit-content+20px); */
   color: white;
   background-color: rgba(255, 255, 255, 0.1);
   display: flex;
-  /* align-items: center; */
-  /* justify-content: space-around; */
   row-gap: 30px;
   flex-direction: column;
   border-radius: 7px;
-  /* height: 60%; */
   padding: 17px 17px;
 }
 h2 {
