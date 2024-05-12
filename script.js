@@ -1,26 +1,34 @@
-let img = document.getElementById("img").childNodes[0];
+const img = document.querySelector("img")
 
-let status = document.getElementById("status");
+const status = document.querySelector("#status");
 
-let message = document.getElementById("message");
+const message = document.querySelector("#message");
 
 const fetchDog = async () => {
+  const res = await fetch("/httpDog.json");
+  const dogData = await res.json();
 
-    let dogData = await fetch("/Https-Dog/httpDog.json").then((value) => value.json());
+  const randomNum = parseInt(Math.random() * dogData.HttpArray.length);
 
-    let randomNum = parseInt(Math.random() * 72);
+  const randomHttp = dogData.HttpArray[randomNum];
 
-    // console.log(randomNum);
+  img.src = `https://http.dog/${randomHttp.status}.jpg`;
 
-    let randomHttp = dogData.HttpArray[randomNum];
+  status.innerHTML = `<h2>${randomHttp.status}</h2>`;
 
-    img.src = `https://http.dog/${randomHttp.status}.jpg`;
-    
-    status.innerHTML = `<h2>${randomHttp.status}</h2>`
-
-    message.innerHTML = `<strong>${randomHttp.message}</strong>`
-
+  message.innerHTML = `<strong>${randomHttp.message}</strong>`;
 };
 
 fetchDog();
 
+const btn = document.querySelector("button.btn");
+btn.click = () => {
+  btn.dispatchEvent(new Event("click"));
+};
+
+let interval = setInterval(btn.click, 5000);
+btn.addEventListener("click", () => {
+  clearInterval(interval);
+  interval = setInterval(btn.click, 5000);
+  fetchDog();
+});
